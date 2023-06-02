@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url(img/background_image.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+section#text {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: rgb(0, 89, 255);
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.navbar .list {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.navbar .toggleBtn {
+    color: whitesmoke;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.actionBtn {
+    background-color: rgb(0, 89, 255);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.actionBtn:hover {
+    scale: 1.05;
+    color: white;
+}
+
+.actionBtn:active {
+    scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+
+.dropdown {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown.open {
+    height: 240px;
+}
+
+.dropdown li {
+    list-style: none;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown .actionBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width: 950px) {
+    .navbar .list,
+    .navbar .actionBtn {
+        display: none;
+    }
+
+    .navbar .toggleBtn {
+        display: block;
+    }
+}
+
+@media(max-width: 576px) {
+    .dropdown {
+        left: 2rem;
+        width: unset;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="#">Adventure</a></div>
+            <ul class="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="actionBtn">Get Started</a>
+            <div class="toggleBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <div class="dropdown">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="actionBtn">Get Started</a></li>
+        </div>
+    </header>
+
+    <main>
+        <section id="text">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Deserunt omnis tenetur reiciendis ea
+                commodi perspiciatis neque odio <br> dolor suscipit id ad, facilis sint earum eos accusamus aut </p>
+        </section>
+    </main>
+
+    <script>
+        const toggle_Btn = document.querySelector(".toggleBtn")
+        const toggle_Btn_Icon = document.querySelector(".toggleBtn i")
+        const dropdown_menu = document.querySelector(".dropdown")
+
+        toggle_Btn.onclick = function () {
+            dropdown_menu.classList.toggle('open')
+            const isOpen = dropdown_menu.classList.contains('open')
+
+            toggle_Btn_Icon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
+        }
+    </script>
+</body>
+
+</html>
